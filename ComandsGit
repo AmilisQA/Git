@@ -1,0 +1,43 @@
+git config --global user.name "My Name"
+git config --global user.email "My Email"
+
+git config
+
+cd c:/project
+git clone URL
+
+git add .
+// добавляем все файлы
+git add --all
+//если не указан конкретный путь в параметре будут применены ко всему дереву, даже если команда была запущена внутри подкаталога
+git add index.html
+// добавляем файл index.html
+git add '*.txt'
+// добавляем файл с расширением txt
+git add octofamily/octodog.txt
+
+git commit -m "message"
+
+git push -u origin master    // в таком виде используем только первый раз, потом используем команду без флагов
+git push
+
+git pull //скачивание с репозитория
+
+git log
+git log --pretty=format:"%h - %an , %ar : %s"   // формат вывода: h[хеш] - an[автор] , ar[когда было сделано изменение] : s[комментарий]
+git log --since=2.weeks // посмотреть коммиты за последние 2 недели 
+
+git branch
+git branch branch-name
+git checkout branch-name
+git merge //объединение веток
+
+git branch -d branch-name //удалить ветку в локальной рабочей копии
+
+git push origin --delete branch-name
+git push origin :branch-name //удалить ветку в удаленном репозитории
+
+git checkout -- octocat.txt //откат изменений
+
+git rm file.name
+git rm '*.txt' //удаление файлов

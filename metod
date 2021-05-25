@@ -37,12 +37,8 @@ class Event:
         self.type = event_type
         self.session_id = session_id
 
-    def init_from_dict(self, event_dict):
-        self.timestamp = event_dict.get("timestamp")
-        self.type = event_dict.get("type")
-        self.session_id = event_dict.get("session_id")
-
 for i in events:
-    event_obj = Event()
-    event_obj.init_from_dict(i)
+    event_obj = Event(timestamp = i.get("timestamp"),
+                      event_type = i.get("type"),
+                      session_id = i.get("session_id"))
     print(event_obj.timestamp)

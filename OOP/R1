@@ -1,0 +1,13 @@
+from rectangle import Rectangle
+# осуществляется импорт, то есть прописывается с помощью ключевых фраз: from — название файла, import — название класса
+
+r1 = Rectangle (10,5)
+
+print("r1.widht =",r1.width)
+print("r1.height =",r1.height)
+print("r1.getArea =",r1.getArea())
+
+r2 = Rectangle(20,200)
+print("r2.widht =",r2.width)
+print("r2.height =",r2.height)
+print("r2.getArea =",r2.getArea())

@@ -1,13 +1,28 @@
-from rectangle import Rectangle
+from rectangle import Rectangle, Square, Circle
 # осуществляется импорт, то есть прописывается с помощью ключевых фраз: from — название файла, import — название класса
 
-r1 = Rectangle (10,5)
+r1 = Rectangle (2,3)
+r2 = Rectangle (5,5)
+#print("r1.getArea =",r1.getArea())
+#print("r2.getArea =",r2.getArea())
 
-print("r1.widht =",r1.width)
-print("r1.height =",r1.height)
-print("r1.getArea =",r1.getArea())
 
-r2 = Rectangle(20,200)
-print("r2.widht =",r2.width)
-print("r2.height =",r2.height)
-print("r2.getArea =",r2.getArea())
+s1 = Square (9)
+s2 = Square (7)
+#print("s1.getAreaSquare =",s1.getAreaSquare())
+#print("s2.getAreaSquare =",s2.getAreaSquare())
+
+c1 = Circle (4)
+c2 = Circle (12)
+
+
+figures = [r1, r2, s1,s2, c1, c2]
+for figure in figures:
+    if isinstance(figure, Square):
+        print(figure.getAreaSquare())
+
+    elif isinstance(figure, Circle):
+        print(figure.getAreaCircle())
+
+    else:
+        print(figure.getArea())

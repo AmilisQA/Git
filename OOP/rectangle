@@ -1,14 +1,28 @@
+import math
+
+class NonPositiveDigitException(ValueError):
+    pass
+
+#прямоугольник
 class Rectangle:
-    def __init__(self,width,height):
-        self.width = width
-        self.height = height
-
-    def getWidht(self):
-        return self.width
-
-    def getHight(self):
-        return self.height
-
-#метод, рассчитывающий площадь
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
     def getArea(self):
-        return self.width*self.height
+        return self.a*self.b
+        
+#квадрат        
+class Square:
+    def __init__(self,s):
+        if s <= 0:
+            raise NonPositiveDigitException('Неправильно указанна сторона квадрата')
+        self.s = s
+    def getAreaSquare(self):
+        return self.s**2
+
+#круг
+class Circle:
+    def __init__(self,c):
+        self.c = c
+    def getAreaCircle(self):
+        return (self.c/2)**2*math.pi

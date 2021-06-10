@@ -1,0 +1,46 @@
+def ranging(array):
+    for i in range(len(array)):
+        for j in range(len(array) - i - 1):
+            if array[j] > array[j + 1]:
+               array[j], array[j + 1] = array[j + 1], array[j]
+    return array
+
+
+def binary_search(array, element, left, right):
+    if left > right:  # если левая граница превысила правую,
+        return "Элемент отсутствует"  # значит элемент отсутствует
+
+    middle = (right + left) // 2  # находимо середину
+    if array[middle] == element:  # если элемент в середине,
+        return 'Позиция элемента, меньшего, чем введенный', middle  # возвращаем этот индекс
+    elif element < array[middle]:  # если элемент меньше элемента в середине
+        # рекурсивно ищем в левой половине
+        return binary_search(array, element, left, middle - 1)
+    else:  # иначе в правой
+        return binary_search(array, element, middle + 1, right)
+
+def input_val():
+    while type:
+        n_string = input("Введите целые числа через пробел: ")
+        try:
+            b_str = list(map(int, n_string.split()))
+            if not len(b_str):
+                raise ValueError
+        except ValueError:
+            print("Неверный формат данных")
+        else:
+            break
+
+    while True:
+        dig = input("Введите целое число: ")
+        try:
+            target = int(dig)
+        except ValueError:
+            print(dig,' не является целым числом')
+        else:
+            break
+    new_list = b_str + [target]
+    print(binary_search(ranging(new_list), target, 0, len(new_list)))
+
+
+input_val()
